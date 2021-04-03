@@ -9,11 +9,11 @@ import Foundation
 
 struct Meta: Codable  {
     
-    let totalPages  : Int
-    let currentPage : Int
-    let nextPage    : Int?
-    let perPage     : Int
-    let totalCount  : Int
+    var totalPages  : Int
+    var currentPage : Int
+    var nextPage    : Int?
+    var perPage     : Int
+    var totalCount  : Int
     
     enum CodingKeys: String, CodingKey {
         case totalPages = "total_pages"

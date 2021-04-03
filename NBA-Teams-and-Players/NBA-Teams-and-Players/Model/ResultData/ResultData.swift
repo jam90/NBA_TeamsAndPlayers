@@ -9,8 +9,8 @@ import Foundation
 
 struct ResultData<T : Codable> : Codable {
     
-    let data: [T]?
-    let meta: Meta
+    var data: [T]?
+    var meta: Meta
 
     enum CodingKeys: String, CodingKey {
         case data = "data"
