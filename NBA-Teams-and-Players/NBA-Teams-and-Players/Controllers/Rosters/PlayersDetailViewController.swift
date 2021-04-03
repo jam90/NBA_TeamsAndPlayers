@@ -22,6 +22,7 @@ class PlayersDetailViewController: UIViewController {
     
     @IBOutlet private weak var bottomConstraintContainerView: NSLayoutConstraint!
     
+    @IBOutlet private weak var closeViewButton: UIButton!
     @IBAction private func closeView(_ sender: UIButton) {
         self.dismissView()
     }
@@ -120,4 +121,7 @@ class PlayersDetailViewController: UIViewController {
         })
     }
 
+    deinit {
+        self.closeViewButton = nil
+    }
 }

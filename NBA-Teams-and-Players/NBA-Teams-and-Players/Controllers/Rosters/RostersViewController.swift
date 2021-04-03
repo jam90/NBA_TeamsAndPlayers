@@ -119,7 +119,7 @@ class RostersViewController: UIViewController {
         guard let team = team else { return }
         
         api.getTeamLogo(abbreviation: team.abbreviation ?? "") { [weak self] image in
-            DispatchQueue.inUIThread {
+            DispatchQueue.inUIThread { [weak self] in
                 self?.teamLogoImageView.image = image
             }
         }
@@ -149,24 +149,29 @@ class RostersViewController: UIViewController {
         self.players = Array(Set(api.allPlayersArray.filter {$0.team == team})).sorted(by: {$0.last_name ?? "" < $1.last_name ?? ""})
     }
     
+    deinit {
+        self.teamLogoImageView = nil
+        self.errorIncompleteLogo = nil
+    }
+    
 }
 
 extension RostersViewController: CanRemoveCustomLoadingDelegate {
     
     func removeCustomLoading() {
         
-        DispatchQueue.inUIThread {
+        DispatchQueue.inUIThread { [weak self] in
             guard topErrorBannerConstraint.constant == 0.0 else {
-                self.errorIncompleteBanner.removeFromSuperview()
+                self?.errorIncompleteBanner.removeFromSuperview()
                 return
             }
             
-            self.errorIncompletePlayersTitleLabel.text = "completeLoading".localizeMe()
-            self.errorIncompletePlayerBodyLabel.text = "completeLoadingBody".localizeMe()
-            self.errorIncompleteBanner.backgroundColor = .systemGreen
-            self.errorIncompleteLogo.image = UIImage(systemName: "checkmark.seal.fill")
+            self?.errorIncompletePlayersTitleLabel.text = "completeLoading".localizeMe()
+            self?.errorIncompletePlayerBodyLabel.text = "completeLoadingBody".localizeMe()
+            self?.errorIncompleteBanner.backgroundColor = .systemGreen
+            self?.errorIncompleteLogo.image = UIImage(systemName: "checkmark.seal.fill")
             
-            self.view.layoutIfNeeded()
+            self?.view.layoutIfNeeded()
             
             UIView.animate(withDuration: 1.0, delay: 2.0, options: .allowUserInteraction) { [weak self] in
                 let heightBanner = (self?.errorIncompleteBanner.frame.height ?? 0.0)

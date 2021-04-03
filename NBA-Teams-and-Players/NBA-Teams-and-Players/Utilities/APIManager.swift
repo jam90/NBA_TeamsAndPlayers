@@ -51,8 +51,8 @@ class APIManager {
         var totalPages = 0
         
         func reiterate() {
-            DispatchQueue.main.async {
-                self.getAllPlayers(page: page) { [weak self] (data) in
+            DispatchQueue.main.async { [weak self] in
+                self?.getAllPlayers(page: page) { [weak self] (data) in
                     
                     guard let self = self else { return }
                     
@@ -260,6 +260,7 @@ extension APIManager {
         }
         
         func add(values:[String], suffixs:[Parameters]) -> String {
+            guard values.count == suffixs.count else { fatalError("Error: values and parameters are not the same number")}
             var result = Constants.baseURL + rawValue
             for (index, value) in values.enumerated() {
                 let suffix = suffixs[index]
@@ -311,7 +312,7 @@ extension APIManager {
                 }
                 
                 self?.cacheImage.setObject(image, forKey: url as NSURL, cost: responseData.count)
-                DispatchQueue.global().async {
+                DispatchQueue.main.async {
                     completion(image)
                 }
                 

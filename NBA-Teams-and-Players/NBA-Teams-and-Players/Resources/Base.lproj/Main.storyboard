@@ -263,7 +263,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L6p-6X-7Qd">
-                                        <rect key="frame" x="8" y="7" width="20" height="21.5"/>
+                                        <rect key="frame" x="8" y="9" width="20" height="18"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="MJP-Xh-US0"/>
@@ -461,6 +461,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraintContainerView" destination="4Gv-wR-E0W" id="FdQ-sb-nEm"/>
+                        <outlet property="closeViewButton" destination="gDp-0e-hbb" id="ofE-zv-qxf"/>
                         <outlet property="containerView" destination="QOB-G0-KfH" id="oKu-wL-Yi3"/>
                         <outlet property="heightLabel" destination="YgE-Fw-Hnh" id="FqA-W9-ziq"/>
                         <outlet property="heightLabelValue" destination="5Ld-43-rh2" id="h0r-6N-gT1"/>

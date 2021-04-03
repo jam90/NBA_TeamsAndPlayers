@@ -47,6 +47,12 @@ class HomeViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let teams = self.teams, !teams.isEmpty else { return }
+        self.tableView.reloadData()
+    }
+    
     @objc private func getAllTeams() {
         self.tableView.isUserInteractionEnabled = false
         self.api.getAllTeams(page: 0) { [weak self] teams in

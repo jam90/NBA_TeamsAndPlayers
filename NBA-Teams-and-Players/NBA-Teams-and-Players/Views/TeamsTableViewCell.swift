@@ -43,7 +43,7 @@ class TeamsTableViewCell: UITableViewCell {
         }
         
         APIManager.shared.getTeamLogo(abbreviation: abbreviation) { [weak self] image in
-            DispatchQueue.inUIThread {
+            DispatchQueue.inUIThread { [weak self] in
                 if let image = image, team == self?.team {
                     self?.logoTeam.image = image
                 } else {

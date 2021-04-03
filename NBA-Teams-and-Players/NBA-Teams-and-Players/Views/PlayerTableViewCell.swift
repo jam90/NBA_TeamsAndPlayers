@@ -28,6 +28,10 @@ class PlayerTableViewCell: UITableViewCell {
         self.nameLabel.text = nil
     }
     
+    deinit {
+        self.accessoryView = nil
+    }
+    
     func setCell(player: Player) {
         if let position = player.position, position != "" {
             self.positionLabel.text = position

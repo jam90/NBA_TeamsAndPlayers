@@ -153,3 +153,23 @@ extension UIFont {
     }
     
 }
+
+/*
+ According to Apple docs, NSCache discards objects stored every time they are not needed, AKA when the app goes in background.
+ This causes a lot of API calls every time the app goes in and out from the active state. Subclassing UIImage to NSDiscardableContent
+ and setting isContentDiscarded as false we can avoid this, so that the cache can be empty only on memory pressing with the observer
+ in APIManager class
+ */
+//MARK: UIImage
+extension UIImage: NSDiscardableContent {
+    
+    public func beginContentAccess() -> Bool { return true }
+    
+    public func endContentAccess() {}
+    
+    public func discardContentIfPossible() {}
+    
+    public func isContentDiscarded() -> Bool { return false }
+    
+    
+}
