@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  NBA-Teams-and-Players
+
+  Created by Elia Crocetta on 02/04/21.
+  
+*/
+
+"onBoarding0" = "Scroll through all NBA teams";
+"onBoarding1" = "Find out more information about the team and the complete roster";
+"onBoarding2" = "Select a player to see his characteristics";
+"start" = "Let's start";
+"welcome" = "Welcome in\nNBA Teams & Players!";
+"select_team" = "Select a team";
+"teams" = "Teams list";
+"city" = "City";
+"conference" = "Conference";
+"division" = "Division";
+"rosters" = "Players list";
+"warning" = "Warning";
+"warning_body" = "The roster may be incomplete, please wait for the complete list";
+"completeLoading" = "Loading completed";
+"completeLoadingBody" = "The roster is complete, now is possible to check the complete list";
+"position" = "Position";
+"height" = "Height";
+"weight" = "Weight";
+"team" = "Team";
