@@ -63,26 +63,32 @@ class ModelsTests: XCTestCase {
     }
     
     func testResultTeamHasData() {
-//        resultDataPlayers?.data = nil
         XCTAssertNotNil(resultDataTeams?.data, "This result has no data")
     }
     
     func testResultTeamIsNotEmpty() {
         guard let teams = resultDataTeams?.data else { XCTFail("The data is nil"); return }
-//        teams.removeAll()
         XCTAssertFalse(teams.isEmpty, "This result has no data")
     }
     
     func testResultPlayersCanGoNextPage() {
         resultDataPlayers?.meta = Meta.dummyFirstPage
-//        resultDataPlayers?.meta = Meta.dummyLastPage
         XCTAssertNotNil(resultDataPlayers?.meta.nextPage, "Next page is nil, so this is the last page: can't move forward")
     }
     
     func testResultTeamsCanGoNextPage() {
         resultDataTeams?.meta = Meta.dummyFirstPage
-//        resultDataTeams?.meta = Meta.dummyLastPage
         XCTAssertNotNil(resultDataTeams?.meta.nextPage, "Next page is nil, so this is the last page: can't move forward")
+    }
+    
+    func testResultPlayersIsLastPage() {
+        resultDataPlayers?.meta = Meta.dummyLastPage
+        XCTAssertNil(resultDataPlayers?.meta.nextPage, "Next page is not nil, so this is not the last page")
+    }
+    
+    func testResultTeamsIsLastPage() {
+        resultDataTeams?.meta = Meta.dummyLastPage
+        XCTAssertNil(resultDataTeams?.meta.nextPage, "Next page is not nil, so this is not the last page")
     }
 
 }

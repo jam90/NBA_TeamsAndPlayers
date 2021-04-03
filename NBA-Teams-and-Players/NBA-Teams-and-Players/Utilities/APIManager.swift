@@ -306,6 +306,10 @@ extension APIManager {
                     return
                 }
                 
+                if let httpResponse = response as? HTTPURLResponse {
+                    NSLog("URL: %@, Status Code: %d", url.absoluteString, httpResponse.statusCode)
+                }
+                
                 self?.cacheImage.setObject(image, forKey: url as NSURL, cost: responseData.count)
                 DispatchQueue.global().async {
                     completion(image)

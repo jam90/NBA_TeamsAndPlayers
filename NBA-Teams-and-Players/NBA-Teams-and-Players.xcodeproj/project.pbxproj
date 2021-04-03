@@ -18,6 +18,7 @@
 		FE1D69B626173E690022C1DB /* TeamsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE1D69B426173E690022C1DB /* TeamsTableViewCell.xib */; };
 		FE1D69BF2617472E0022C1DB /* CustomLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1D69BD2617472E0022C1DB /* CustomLoadingViewController.swift */; };
 		FE1D69C02617472E0022C1DB /* CustomLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE1D69BE2617472E0022C1DB /* CustomLoadingViewController.xib */; };
+		FE2D7A0B26189EE1008738D5 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D7A0A26189EE1008738D5 /* APITest.swift */; };
 		FE68247B2617682F00007EB3 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE6824762617682E00007EB3 /* Montserrat-Light.otf */; };
 		FE68247C2617682F00007EB3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE6824772617682E00007EB3 /* Montserrat-Regular.otf */; };
 		FE68247D2617682F00007EB3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE6824782617682E00007EB3 /* Montserrat-Bold.otf */; };
@@ -72,6 +73,7 @@
 		FE1D69B426173E690022C1DB /* TeamsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsTableViewCell.xib; sourceTree = "<group>"; };
 		FE1D69BD2617472E0022C1DB /* CustomLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingViewController.swift; sourceTree = "<group>"; };
 		FE1D69BE2617472E0022C1DB /* CustomLoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomLoadingViewController.xib; sourceTree = "<group>"; };
+		FE2D7A0A26189EE1008738D5 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		FE6824762617682E00007EB3 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
 		FE6824772617682E00007EB3 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		FE6824782617682E00007EB3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				FEE94B74261881E300B51913 /* ModelsTests.swift */,
+				FE2D7A0A26189EE1008738D5 /* APITest.swift */,
 				FEC1082A26167786006E8B0A /* Info.plist */,
 			);
 			path = "NBA-Teams-and-PlayersTests";
@@ -480,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2D7A0B26189EE1008738D5 /* APITest.swift in Sources */,
 				FEE94B75261881E300B51913 /* ModelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
