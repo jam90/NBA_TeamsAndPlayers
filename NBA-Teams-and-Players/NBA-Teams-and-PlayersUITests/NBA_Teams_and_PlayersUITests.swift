@@ -9,26 +9,69 @@ import XCTest
 
 class NBA_Teams_and_PlayersUITests: XCTestCase {
 
+    var app: XCUIApplication?
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        try super.setUpWithError()
+        app = XCUIApplication()
+        app?.launch()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+        app = nil
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    func testOnBoarding() throws {
+        guard let app = self.app else {XCTFail("App instance is nil"); return}
+        
+        app.navigationBars.firstMatch.children(matching: .button).element.tap()
+        
+        let element = app.scrollViews.children(matching: .other).element.children(matching: .other).element
+        element.swipeLeft()
+        element.swipeLeft()
+        element.swipeRight()
+        element.swipeRight()
+        element.swipeLeft(velocity: .fast)
+        element.swipeLeft(velocity: .fast)
+        let mainButton = app.buttons.element(matching: .button, identifier: "mainButton")
+        mainButton.tap()
+    }
+    
+    func testScrollingTeamsList() throws {
+        guard let app = self.app else {XCTFail("App instance is nil"); return}
+        
+        let tableView = app.tables.firstMatch
+        tableView.swipeUp(velocity: .fast)
+        tableView.swipeUp(velocity: .fast)
+        tableView.swipeUp(velocity: .fast)
+        tableView.swipeUp(velocity: .fast)
+        tableView.swipeUp(velocity: .fast)
+        tableView.swipeDown(velocity: .fast)
+        tableView.swipeDown(velocity: .fast)
+        tableView.swipeDown(velocity: .fast)
+        tableView.swipeDown(velocity: .fast)
+        tableView.swipeDown(velocity: .fast)
+    }
+    
+    func testOpenTeamDetailAndBack() {
+        guard let app = self.app else {XCTFail("App instance is nil"); return}
+        
+        app.cells.firstMatch.tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        
+    }
+    
+    func testOpenTeamDetailAndSelectPlayer() {
+        guard let app = self.app else {XCTFail("App instance is nil"); return}
+        
+        app.cells.firstMatch.tap()
+        app.cells.firstMatch.buttons.element(boundBy: 0).tap()
+        app.buttons.element(matching: .button, identifier: "closeDetailPlayer").tap()
+        app.tables.firstMatch.swipeUp(velocity: .fast)
+        app.tables.firstMatch.swipeDown(velocity: .fast)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
     }
 
     func testLaunchPerformance() throws {

@@ -29,6 +29,7 @@
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-hn-jHM">
                                 <rect key="frame" x="32" y="782" width="350" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="mainButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Mub-SS-y2y"/>
                                 </constraints>
@@ -425,6 +426,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-0e-hbb">
                                         <rect key="frame" x="356" y="8" width="50" height="50"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="closeDetailPlayer"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9KA-v6-ZW4"/>
                                             <constraint firstAttribute="width" constant="50" id="kYQ-wE-0er"/>
@@ -461,7 +463,6 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraintContainerView" destination="4Gv-wR-E0W" id="FdQ-sb-nEm"/>
-                        <outlet property="closeViewButton" destination="gDp-0e-hbb" id="ofE-zv-qxf"/>
                         <outlet property="containerView" destination="QOB-G0-KfH" id="oKu-wL-Yi3"/>
                         <outlet property="heightLabel" destination="YgE-Fw-Hnh" id="FqA-W9-ziq"/>
                         <outlet property="heightLabelValue" destination="5Ld-43-rh2" id="h0r-6N-gT1"/>
